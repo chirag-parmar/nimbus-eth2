@@ -545,8 +545,7 @@ proc initFullNode(
   node.syncManager = syncManager
   node.backfiller = backfiller
   node.untrustedManager = untrustedManager
-  node.syncOverseer = SyncOverseerRef.new(node.dag,
-                                          node.attestationPool,
+  node.syncOverseer = SyncOverseerRef.new(node.consensusManager,
                                           node.validatorMonitor,
                                           getBeaconTime,
                                           node.list,
